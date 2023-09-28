@@ -1,0 +1,45 @@
+doctype html
+html
+	head
+		script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-155158328-3")
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag("js", new Date());
+			gtag("config", "UA-155158328-3");
+		script(src="https://code.jquery.com/jquery-3.6.0.slim.min.js")
+		title Wynem
+		link(rel='icon', type='image/png', sizes='16x16', href=require("../assets/images/logo/wynem_16.png").default)
+		link(rel='icon', type='image/png', sizes='32x32', href=require("../assets/images/logo/wynem_32.png").default)
+		meta(property="og:type", content="website")
+		meta(property="og:title", content="Wynem")
+		meta(property="og:description", content="Wynem is a multipurpose discord bot that has a vast array of features for all sorts of purposes. From Moderation, to Fun, to Image Editing!")
+		meta(property="og:image", content="http://www.wynem.com/bot_assets/images/logo/wynem.png")
+		meta(name="theme-color", content="#3483EB")
+	body
+		.banner
+			a#homeButton.bannerLogoLink.selected(href="/")
+				.bannerLogo: include ../assets/images/logo/wynem.svg
+			a#commandsButton.bannerButton(href="?commands") Commands
+			a#featuresButton.bannerButton(href="?features") Features
+			.filler
+			.bannerDrop
+				.menu
+					a#cemButton(href="?cem") Custom Entity Models
+					a#cem_animation_docButton(href="?cem_animation_doc") CEM Animation Documentation
+			a.bannerButton(target="_blank", href="/invite") Invite Bot
+			a.bannerButton(target="_blank", href="https://discord.com/invite/pkRxtGw") Discord Server
+		#content
+			#home.page: include pages/home.pug
+			#commands.page.hidden: include pages/commands.pug
+			#features.page.hidden: include pages/features.pug
+			#privacy.page.hidden: include pages/privacy.pug
+			#cem.page.hidden: include pages/cem.pug
+			#cem_animation_doc.page.hidden: include pages/cem_animation_doc.pug
+		.footer
+			a(target="_blank", href="https://www.ewanhowell.com/") @ewanhowell5195
+			.filler
+			a(target="_blank", href="https://www.wynem.com/contact/") Contact
+			a(target="_blank", href="https://ko-fi.com/ewanhowell/") Donate
+			a#privacyButton(href="?privacy") Privacy Policy
+		input#text-copier

@@ -1,0 +1,7 @@
+.pageContent
+	#entityListBox
+		h1 OptiFine Custom Entity Models
+	#boneListBox
+		#entitySearch
+			div(onclick = "this.nextSibling.focus()"): include ../../assets/images/symbols/search.svg
+			input(placeholder = "Search...", type = "text", spellcheck = "false", oninput = "processEntitySearch(event)", onblur = "processEndEntitySearch(event)")
